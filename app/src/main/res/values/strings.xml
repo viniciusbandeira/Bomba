@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Bomba</string>
 
-    <string name="attempts">Tentativas</string>
+    <string name="attempts">Número de tentativas</string>
     <string name="password_mask">****</string>
 
     <!-- Ketboard -->
@@ -17,4 +17,5 @@
     <string name="nine">9</string>
     <string name="erase">&#9003;</string>
     <string name="clear">C</string>
+    <string name="check_password">Botão para testar a senha</string>
 </resources>
