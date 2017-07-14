@@ -18,4 +18,20 @@
     <string name="erase">&#9003;</string>
     <string name="clear">C</string>
     <string name="check_password">Botão para testar a senha</string>
+    <string name="time">00:00</string>
+
+    <string-array name="keyboard">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>&#9003;</item>
+        <item>0</item>
+        <item>C</item>
+    </string-array>
 </resources>
