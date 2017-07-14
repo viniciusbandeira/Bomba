@@ -12,11 +12,19 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <Chronometer
+        <!--<Chronometer-->
+        <!--android:id="@+id/timer"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:textSize="50sp" />-->
+        <TextView
+            android:id="@+id/time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:format="MM:SS" />
+            android:textSize="50sp"
+            tools:text="@string/time" />
     </FrameLayout>
 
     <LinearLayout
@@ -31,7 +39,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/first_miss_iv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -40,7 +48,7 @@
                 android:contentDescription="@string/attempts"
                 android:src="@drawable/guess" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/second_miss_iv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -49,7 +57,7 @@
                 android:contentDescription="@string/attempts"
                 android:src="@drawable/guess" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/third_miss_iv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -66,88 +74,32 @@
             android:padding="16dp">
 
             <EditText
+                android:id="@+id/password_et"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:gravity="center"
-                android:hint="@string/password_mask" />
+                android:hint="@string/password_mask"
+                android:maxLength="4"
+                android:textSize="30sp" />
 
             <ImageButton
+                android:id="@+id/check_b"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:contentDescription="@string/check_password"
                 android:background="@android:color/transparent"
+                android:contentDescription="@string/check_password"
                 android:src="@drawable/play" />
         </LinearLayout>
 
         <GridLayout
+            android:id="@+id/keyboard_gl"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:alignmentMode="alignBounds"
-            android:columnCount="3">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/one" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/two" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/three" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/four" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/five" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/six" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/seven" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/eight" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nine" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/erase" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/zero" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/clear" />
-        </GridLayout>
+            android:columnCount="3" />
     </LinearLayout>
 </LinearLayout>
