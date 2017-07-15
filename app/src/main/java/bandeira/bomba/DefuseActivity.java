@@ -168,6 +168,7 @@ public class DefuseActivity extends AppCompatActivity {
     private void checkPassword() {
         if (passwordET.getText().toString().equals(PASSWORD)) {
             keyboardGL.setBackgroundResource(R.drawable.green_keyboard_light);
+            timer.cancel();
         } else {
             wrongGuesses++;
             displayWrongGuesses(wrongGuesses);
