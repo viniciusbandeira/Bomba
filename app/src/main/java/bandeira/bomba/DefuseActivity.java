@@ -74,6 +74,11 @@ public class DefuseActivity extends AppCompatActivity {
         }.start();
     }
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
     private void getViews() {
         timeTV = (TextView) findViewById(R.id.time_tv);
         firstMissIV = (ImageView) findViewById(R.id.first_miss_iv);
