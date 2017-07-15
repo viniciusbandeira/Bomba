@@ -1,6 +1,7 @@
 package bandeira.bomba;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class DefuseActivity extends AppCompatActivity {
     private CountDownTimer timer;
 
     private TextView timeTV;
+    private TextView restartGameTV;
     private ImageView firstMissIV;
     private ImageView secondMissTV;
     private ImageView thirdMissTV;
@@ -83,6 +85,7 @@ public class DefuseActivity extends AppCompatActivity {
 
     private void getViews() {
         timeTV = (TextView) findViewById(R.id.time_tv);
+        restartGameTV = (TextView) findViewById(R.id.reset_tv);
         firstMissIV = (ImageView) findViewById(R.id.first_miss_iv);
         secondMissTV = (ImageView) findViewById(R.id.second_miss_iv);
         thirdMissTV = (ImageView) findViewById(R.id.third_miss_iv);
@@ -122,6 +125,18 @@ public class DefuseActivity extends AppCompatActivity {
     }
 
     private void configureViews() {
+        Typeface displayFont = Typeface.createFromAsset(getAssets(), "font/open-24-display-st.ttf");
+
+        restartGameTV.setTypeface(displayFont);
+        restartGameTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DefuseActivity.this, TutorialActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         keyboardGL.getChildAt(keyboardGL.getChildCount() - 1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -129,7 +144,6 @@ public class DefuseActivity extends AppCompatActivity {
             }
         });
 
-        Typeface displayFont = Typeface.createFromAsset(getAssets(), "font/open-24-display-st.ttf");
         timeTV.setTypeface(displayFont);
         passwordET.setTypeface(displayFont);
     }
@@ -157,6 +171,8 @@ public class DefuseActivity extends AppCompatActivity {
             mediaPlayer.stop();
             mediaPlayer.release();
             showVictoryDialog();
+            restartGameTV.setVisibility(View.VISIBLE);
+            keyboardGL.getChildAt(keyboardGL.getChildCount() - 1).setEnabled(false);
         } else {
             wrongGuesses++;
             displayWrongGuesses(wrongGuesses);
@@ -166,6 +182,8 @@ public class DefuseActivity extends AppCompatActivity {
                 timer.cancel();
                 playMusic(R.raw.explosion);
                 showDefeatDialog();
+                restartGameTV.setVisibility(View.VISIBLE);
+                keyboardGL.getChildAt(keyboardGL.getChildCount() - 1).setEnabled(false);
             }
         }
     }

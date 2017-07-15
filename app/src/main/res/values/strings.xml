@@ -20,6 +20,7 @@
     <string name="check_password">Botão para testar a senha</string>
     <string name="time">00:00</string>
     <string name="skip_tutorial">Pular Tutorial</string>
+    <string name="restart_game">Reiniciar Jogo</string>
 
     <string-array name="keyboard_values">
         <item>1</item>
