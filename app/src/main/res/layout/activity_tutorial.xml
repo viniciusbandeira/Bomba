@@ -3,22 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="bandeira.bomba.TutorialActivity">
+    tools:context="bandeira.bomba.TutorialActivity"
+    android:background="@drawable/tutorial_background">
 
     <ImageButton
         android:id="@+id/start_tutorial_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:padding="8dp"
         android:background="@null"
         android:src="@drawable/play" />
 
-    <Button
-        android:id="@+id/skip_b"
+    <ImageButton
+        android:id="@+id/skip_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/skip_tutorial" />
+        android:src="@drawable/skip_intro"
+        android:padding="16dp"
+        android:background="@null"/>
 </RelativeLayout>
