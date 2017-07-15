@@ -119,28 +119,6 @@ public class DefuseActivity extends AppCompatActivity {
         });
     }
 
-//    private void createKeyboard() {
-//        final String[] buttonsText = getResources().getStringArray(R.array.keyboard_values);
-//        final TypedArray buttonsImage = getResources().obtainTypedArray(R.array.keyboard_keys);
-//
-//        for (int i = 0; i < buttonsImage.length(); i++) {
-//            final int j = i;
-//            ImageButton imageButton = new ImageButton(DefuseActivity.this);
-//            imageButton.setBackgroundResource(buttonsImage.getResourceId(i, 0));
-//            imageButton.setPadding(24, 24, 24, 24);
-//            imageButton.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Toast.makeText(DefuseActivity.this, buttonsText[j], Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//            keyboardGL.addView(imageButton);
-//        }
-//
-//        buttonsImage.recycle();
-//    }
-
     private void configureViews() {
         keyboardGL.getChildAt(keyboardGL.getChildCount() - 1).setOnClickListener(new View.OnClickListener() {
             @Override
