@@ -1,9 +1,11 @@
 package bandeira.bomba;
 
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
@@ -152,6 +154,7 @@ public class DefuseActivity extends AppCompatActivity {
         if (passwordET.getText().toString().equals(PASSWORD)) {
             keyboardGL.setBackgroundResource(R.drawable.green_keyboard_light);
             timer.cancel();
+            showVictoryDialog();
         } else {
             wrongGuesses++;
             displayWrongGuesses(wrongGuesses);
@@ -160,6 +163,7 @@ public class DefuseActivity extends AppCompatActivity {
                 keyboardGL.setBackgroundResource(R.drawable.red_keyboard_light);
                 timer.cancel();
                 playMusic(R.raw.explosion);
+                showDefeatDialog();
             }
         }
     }
@@ -168,5 +172,33 @@ public class DefuseActivity extends AppCompatActivity {
         for (int i = 0; i < guesses && i < 3; i++) {
             guessesCounter.get(i).setImageResource(R.drawable.light_on);
         }
+    }
+
+    private void showVictoryDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(DefuseActivity.this);
+        builder.setTitle("Parabéns!!!");
+        builder.setMessage("Você conseguiu desarmar a bomba.\nContate o responsável pela sala.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showDefeatDialog() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(DefuseActivity.this);
+        builder.setTitle("Derrota!!!");
+        builder.setMessage("Você não conseguiur desarmar a bomba à tempo.\nContate o responsável pela sala.");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
