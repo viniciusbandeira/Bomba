@@ -73,7 +73,10 @@ public class DefuseActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Toast.makeText(DefuseActivity.this, "Xablau!! Você morreu! :(", Toast.LENGTH_SHORT).show();
+                playMusic(R.raw.explosion);
+                showDefeatDialog();
+                restartGameTV.setVisibility(View.VISIBLE);
+                keyboardGL.getChildAt(keyboardGL.getChildCount() - 1).setEnabled(false);
             }
         }.start();
     }
