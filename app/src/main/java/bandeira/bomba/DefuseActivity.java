@@ -154,6 +154,8 @@ public class DefuseActivity extends AppCompatActivity {
         if (passwordET.getText().toString().equals(PASSWORD)) {
             keyboardGL.setBackgroundResource(R.drawable.green_keyboard_light);
             timer.cancel();
+            mediaPlayer.stop();
+            mediaPlayer.release();
             showVictoryDialog();
         } else {
             wrongGuesses++;
