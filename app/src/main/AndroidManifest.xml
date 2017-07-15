@@ -11,13 +11,13 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:windowSoftInputMode="stateAlwaysHidden">
         <activity
-            android:name=".ConfigActivity"
-            android:screenOrientation="sensorLandscape"/>
-        <activity
             android:name=".DefuseActivity"
-            android:screenOrientation="sensorLandscape">
-        </activity>
-        <activity android:name=".TutorialActivity">
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".TutorialActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
